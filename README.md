@@ -5,7 +5,7 @@ A full-stack machine learning web application that predicts the likelihood of di
 
 ---
 
-## 📸 Demo Screenshot
+## 📸 Demo Screenshots
 
 ![App Screenshot2](./screenshot1.png)
 ![App Screenshot2](./screenshot2.png)
@@ -59,7 +59,16 @@ This project taught me how **backend and frontend** can work together with machi
 
 ## ⚙️ 1. Installation & Setup
 
-### 🔙 Backend Setup (FastAPI + Python)
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/shahriarsworld/Diabetes-Predictor.git
+cd Diabetes-Predictor
+
+```
+---
+
+### 2. Backend Setup (FastAPI + Python)
 
 ```bash
 cd backend
@@ -70,14 +79,15 @@ source venv/bin/activate     # On Mac/Linux
 
 pip install -r requirements.txt
 uvicorn app:app --reload
-````
+```
 
-🔗 Backend runs at: [http://localhost:8000](http://localhost:8000)
-🧪 Test API: [http://localhost:8000/docs](http://localhost:8000/docs)
+🔗 Backend will run at: `http://localhost:8000`
+
+Test with Swagger UI: `http://localhost:8000/docs`
 
 ---
 
-### 🎨 Frontend Setup (React + Vite)
+### 3. Frontend Setup (React + Vite)
 
 ```bash
 cd ../frontend
@@ -85,7 +95,7 @@ npm install
 npm run dev
 ```
 
-🖥️ Frontend runs at: [http://localhost:5173](http://localhost:5173)
+🖥️ Frontend will run at: `http://localhost:5173`
 
 ---
 
