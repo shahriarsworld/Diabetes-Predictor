@@ -1,0 +1,219 @@
+/* === GLOBAL STYLES === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('C:\\Users\\Shihab\\Desktop\\Diabetes Predictor\\frontend\\src/diabetes-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+  color: #222;
+}
+
+.container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.295); /* translucent white */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);  /* this creates the blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease forwards;
+}
+
+h1 {
+  text-align: center;
+  color: #156064;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+  animation: slideInDown 0.8s ease-out;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: #333;
+}
+
+input {
+  padding: 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #156064;
+  transform: scale(1.03);
+}
+
+button {
+  grid-column: 1 / -1;
+  padding: 0.9rem;
+  font-size: 1rem;
+  background-color: #156064;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #0e4749;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #9fb8bc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* === RESULT CARD (hidden now, replaced by popup) === */
+.result {
+  margin-top: 2.5rem;
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 12px;
+  animation: popIn 0.5s ease-out;
+}
+
+.result.positive {
+  background-color: #ffe4e1;
+  color: #c82333;
+}
+
+.result.negative {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* === POPUP STYLES === */
+
+/* Overlay behind the popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Popup container */
+.popup {
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  max-width: 400px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #222;
+  animation: popIn 0.3s ease forwards;
+  position: relative;
+}
+
+/* Color variants */
+.popup.positive {
+  border: 3px solid #c82333;
+  color: #c82333;
+}
+
+.popup.negative {
+  border: 3px solid #155724;
+  color: #155724;
+}
+
+/* Close button */
+.popup-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #666;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.popup-close:hover {
+  color: #222;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
