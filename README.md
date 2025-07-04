@@ -89,7 +89,6 @@ npm run dev
 
 ---
 
-## 🌍 Connect With Me
 
 Made with 💙 by [@shahriarsworld](https://github.com/shahriarsworld)
 
