@@ -9,13 +9,13 @@ app = FastAPI()
 # Enable CORS (to allow React frontend to connect)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace * with frontend URL in production
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Load your model and scaler
+
 model = joblib.load("diabetes_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
